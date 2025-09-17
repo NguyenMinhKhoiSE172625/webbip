@@ -267,6 +267,36 @@ class SecretMessage {
         }
     }
 
+    createSecretFile() {
+        const content = ` Sao lại tìm thấy cái này ta !?
+
+        Anh nghĩ Giang sẽ quay lại web lần nữa nên update thêm xíu ! :>>
+
+        Ây này hơi bí mật nhưng mà nhớ không được buồn nhá! 
+        Không được khóc nữa vì nó làm em xấu đi đấy!
+
+        Đừng sợ đừng ngại chia sẻ với anh bất kì thứ gì vì em vui thì anh cũng vui mò!
+        
+        Nhớ đó nhe!
+
+Được tạo bởi thằng Khoi bí ẩn 🐼
+
+---
+Thời gian: ${new Date().toLocaleString('vi-VN')}
+`;
+
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Đây-là-gì-vậy.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
     showFinalMessage() {
         const finalMessage = document.getElementById('finalMessage');
         finalMessage.style.display = 'block';
@@ -282,6 +312,8 @@ class SecretMessage {
         pandaTrigger.addEventListener('click', () => {
             pandaContainer.classList.toggle('show');
             this.createHeartExplosion(pandaTrigger);
+            // Tạo file download
+            this.createSecretFile();
         });
         
         setTimeout(() => {
@@ -370,6 +402,7 @@ function createSparkle(x, y) {
         }
     }, 1050);
 }
+
 
 
 
