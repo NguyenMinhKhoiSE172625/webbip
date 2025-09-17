@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chúc Mừng Sinh Nhật Hoàng Ngân Giang! 🎂</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎂</text></svg>">
+    <link rel="stylesheet" href="birthday.css">
+    <!-- Thư viện anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Thư viện particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Thư viện confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Particles background -->
+    <div id="particles-js"></div>
+    
+    <!-- Floating balloons -->
+    <div class="balloons">
+        <div class="balloon balloon-1">🎈</div>
+        <div class="balloon balloon-2">🎈</div>
+        <div class="balloon balloon-3">🎈</div>
+        <div class="balloon balloon-4">🎈</div>
+        <div class="balloon balloon-5">🎈</div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <!-- Birthday cake -->
+        <div class="cake-container">
+            <div class="cake">
+                <div class="cake-layer cake-bottom"></div>
+                <div class="cake-layer cake-middle"></div>
+                <div class="cake-layer cake-top"></div>
+                <div class="candles">
+                    <div class="candle">
+                        <div class="flame"></div>
+                        <div class="wick"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame"></div>
+                        <div class="wick"></div>
+                    </div>
+                    <div class="candle">
+                        <div class="flame"></div>
+                        <div class="wick"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthday message -->
+        <div class="birthday-message">
+            <h1 class="main-title">🎉 CHÚC MỪNG SINH NHẬT 🎉</h1>
+            <h2 class="name-title">Hoàng Ngân Giang</h2>
+            <p class="date">12/10</p>
+            <div class="wishes">
+                <p class="wish-text">Chúc em luôn xinh đẹp, vui vẻ và hạnh phúc!</p>
+                <p class="wish-text">Tuổi mới nhiều niềm vui và thành công!</p>
+                <p class="wish-text">Sinh nhật vui vẻ nhé! 🎂✨</p>
+            </div>
+        </div>
+
+        <!-- Interactive elements -->
+        <div class="interactive-section">
+            <button class="blow-candles-btn" onclick="blowCandles()">
+                💨 Thổi nến sinh nhật
+            </button>
+            <button class="confetti-btn" onclick="launchConfetti()">
+                🎊 Bắn pháo hoa
+            </button>
+            <button class="music-btn" onclick="toggleMusic()">
+                🎵 Nhạc sinh nhật
+            </button>
+        </div>
+
+        <!-- Gift box -->
+        <div class="gift-container">
+            <div class="gift-box" onclick="openGift()">
+                <div class="gift-lid"></div>
+                <div class="gift-body"></div>
+                <div class="gift-ribbon-v"></div>
+                <div class="gift-ribbon-h"></div>
+                <div class="gift-bow"></div>
+            </div>
+            <p class="gift-text">Nhấn vào hộp quà! 🎁</p>
+        </div>
+    </div>
+
+    <!-- Hidden audio -->
+    <audio id="birthdayMusic" loop volume="0.3">
+        <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+        <source src="https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg" type="audio/ogg">
+        <!-- Fallback nhạc sinh nhật đơn giản -->
+    </audio>
+
+    <!-- Gift surprise modal -->
+    <div class="gift-modal" id="giftModal">
+        <div class="gift-modal-content">
+            <span class="close-modal" onclick="closeGiftModal()">&times;</span>
+            <h2>🎁 Món quà đặc biệt!</h2>
+            <div class="surprise-content">
+                <div class="heart-rain"></div>
+                <p>Một năm tuổi mới đầy yêu thương và hạnh phúc!</p>
+                <div class="special-message">
+                    <p>Từ người bạn bí ẩn 🐼</p>
+                    <p>Chúc em luôn tươi cười như hôm nay!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="birthday.js"></script>
+</body>
+</html>

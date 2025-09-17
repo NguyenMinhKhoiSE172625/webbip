@@ -97,7 +97,7 @@ class SecretMessage {
             if (this.isScanning) {
                 this.completeScan();
             }
-        }, 5000);
+        }, 3000);
     }
 
     stopScan() {
@@ -308,12 +308,10 @@ Thời gian: ${new Date().toLocaleString('vi-VN')}
         // Bind panda trigger event
         const pandaTrigger = document.getElementById('pandaTrigger');
         const pandaContainer = document.getElementById('pandaContainer');
-        
+
         pandaTrigger.addEventListener('click', () => {
             pandaContainer.classList.toggle('show');
             this.createHeartExplosion(pandaTrigger);
-            // Tạo file download
-            this.createSecretFile();
         });
         
         setTimeout(() => {
@@ -332,6 +330,22 @@ Thời gian: ${new Date().toLocaleString('vi-VN')}
         const stickers = footer.querySelectorAll('.cute-stickers span');
         stickers.forEach((sticker, index) => {
             sticker.style.setProperty('--i', index);
+
+            // Thêm sự kiện cho các icon easter egg
+            if (sticker.textContent === '💩') {
+                sticker.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.createSecretFile();
+                    this.createHeartExplosion(sticker);
+                });
+                sticker.setAttribute('data-clickable', 'true');
+            } else if (sticker.textContent === '🎂') {
+                sticker.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.showBirthdayPage();
+                });
+                sticker.setAttribute('data-clickable', 'true');
+            }
         });
     }
 
@@ -342,13 +356,13 @@ Thời gian: ${new Date().toLocaleString('vi-VN')}
         const fullName = "Hoàng Ngân Giang";
         let currentText = "";
         let charIndex = 0;
-        
+
         // Show the scanning name container
         scanningName.classList.add('reveal');
-        
+
         // Show cursor
         cursor.classList.add('show');
-        
+
         const typeInterval = setInterval(() => {
             if (charIndex < fullName.length && this.isScanning) {
                 currentText += fullName[charIndex];
@@ -362,7 +376,12 @@ Thời gian: ${new Date().toLocaleString('vi-VN')}
                     cursor.classList.remove('show');
                 }, 500);
             }
-        }, 150);
+        }, 100);
+    }
+
+    showBirthdayPage() {
+        // Tạo trang sinh nhật mới
+        window.open('birthday.html', '_blank');
     }
 }
 
@@ -402,6 +421,7 @@ function createSparkle(x, y) {
         }
     }, 1050);
 }
+
 
 
 

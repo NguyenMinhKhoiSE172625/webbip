@@ -106,7 +106,7 @@ body {
     height: 100%;
     background: linear-gradient(90deg, #ff6b9d, #ffd93d);
     width: 0%;
-    transition: width 5s ease;
+    transition: width 3s ease;
     border-radius: 4px;
 }
 
@@ -368,6 +368,17 @@ body {
     font-size: 25px;
     animation: wiggle 2s infinite;
     animation-delay: calc(var(--i) * 0.2s);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.cute-stickers span[data-clickable="true"] {
+    cursor: pointer;
+}
+
+.cute-stickers span[data-clickable="true"]:hover {
+    transform: scale(1.1);
 }
 
 /* Animations */
@@ -508,4 +519,5 @@ body {
         height: 150px;
     }
 }
+
 
