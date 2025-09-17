@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Fingerprint Scanner -->
+        <div class="fingerprint-section active" id="fingerprintSection">
+            <div class="fingerprint-scanner">
+                <div class="fingerprint-icon">👆</div>
+                <div class="scan-line"></div>
+                <div class="ripple"></div>
+            </div>
+            <p class="instruction">Giữ ngón tay để mở khóa</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="scanning-name" id="scanningName">
+                <span class="typing-text" id="typingText"></span>
+                <span class="cursor" id="cursor"></span>
+            </div>
+        </div>
+
+        <!-- Name Reveal (Hidden) -->
+        <div class="name-section" id="nameSection">
+            <div class="sparkles">✨</div>
+            <h1 class="name-reveal">Hoàng Ngân Giang</h1>
+            <div class="heart-float">🐼</div>
+        </div>
+
+        <!-- Note Cards Stack -->
+        <div class="notes-container" id="notesContainer">
+            <div class="note-card" data-index="0">
+                <div class="note-lock">🔒</div>
+                <div class="note-content">
+                    <div class="note-header">
+                        <span class="note-icon">💩</span>
+                        <span class="note-title">Tin nhắn bí mật</span>
+                    </div>
+                    <p class="note-text">Đây là 1 lời nhắn lúc ngồi rảnh</p>
+                    <div class="note-sticker">😌</div>
+                </div>
+                <div class="drag-hint">← Kéo để xem tiếp</div>
+            </div>
+
+            <div class="note-card" data-index="1">
+                <div class="note-lock">🔒</div>
+                <div class="note-content">
+                    <div class="note-header">
+                        <span class="note-icon">⏰</span>
+                        <span class="note-title">Biết mấy giờ rồi không?</span>
+                    </div>
+                    <p class="note-text">Giờ này sao còn ngồi chơi Mai cáp ????!</p>
+                    <div class="note-sticker">😡</div>
+                </div>
+                <div class="drag-hint">← Kéo đi nhanh lên</div>
+            </div>
+
+            <div class="note-card" data-index="2">
+                <div class="note-lock">🔒</div>
+                <div class="note-content">
+                    <div class="note-header">
+                        <span class="note-icon">🍚</span>
+                        <span class="note-title">Nhắc lần cuối nhá</span>
+                    </div>
+                    <p class="note-text">Lo đi ăn cho no đấy nhá ! Còn đói thì nói với a! </p>
+                    <div class="note-sticker">🍱</div>
+                </div>
+                <div class="drag-hint">← Kéo để xem tiếp</div>
+            </div>
+        </div>
+
+        <!-- Final Message -->
+        <div class="final-message" id="finalMessage">
+            <div class="final-text">Nhớ đấy nhá!</div>
+            <div class="final-hearts"></div>
+            <div class="panda-trigger" id="pandaTrigger">Ấn vào đây để xem gấu trúc béo! 🐼</div>
+            <div class="panda-container" id="pandaContainer">
+                <img src="https://media.giphy.com/media/EatwJZRUIv41G/giphy.gif" alt="Gấu trúc béo" class="panda-gif">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer" id="footer">
+            <p>Được tạo bởi thằng Khoi bí ẩn</p>
+            <div class="cute-stickers">
+                <span>🐼</span>
+                <span>💩</span>
+                <span>🐼</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
